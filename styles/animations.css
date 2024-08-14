@@ -21,3 +21,27 @@
       left: -19px;
     }
 }
+
+@keyframes heart-size {
+    from {
+      scale: 1;
+    }
+    50% {
+      scale: 1.5;
+    }
+    to {
+      scale: 1;
+    }
+}
+
+@keyframes heart-sparks-size {
+    from {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+}
