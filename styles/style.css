@@ -389,14 +389,15 @@ dialog[open] {
 }
 
 .modal-form {
+  inline-size: 100%;
   grid-column: 1 / -1;
   grid-row: 2 / span 1;
   justify-self: center;
 }
 
 .modal-button {
-  width: 293px;
-  height: 38px;
+  inline-size: 100%;
+  block-size: 38px;
 }
 
 .save-buton__text {
