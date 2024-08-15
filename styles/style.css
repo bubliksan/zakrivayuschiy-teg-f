@@ -31,7 +31,7 @@
 
 /*  ---Секция общих элементов--- */
 
-.content-decor {  
+.content-decor {
   inline-size: min(100%, 700px);
 }
 
@@ -44,7 +44,7 @@ button {
   position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   background-color: var(--background-color, #000);
   border: 2px solid var(--main-color, #00CC14);
   outline: none;
@@ -109,8 +109,8 @@ button {
   line-height: 1;
 }
 
-.theme-menu {  
-  grid-column: 2 / 3;  
+.theme-menu {
+  grid-column: 2 / 3;
   padding-block-start: 23px;
   padding-block-end: 23px;
 }
@@ -149,8 +149,8 @@ button {
   height: 1px;
   width: calc(100% - 2px);
   transform: scaleX(0);
-  transform-origin: left;  
-  background-color: var(--main-color, #00CC14);  
+  transform-origin: left;
+  background-color: var(--main-color, #00CC14);
   transition: transform 0.3s;
 }
 
@@ -175,7 +175,7 @@ button {
   color: rgb(var(--main-color-opacity) / .6);
   transition: color 0.3s;
   transition-timing-function: ease;
-  pointer-events: none;  
+  pointer-events: none;
 }
 
 /*  ---Секция карточек--- */
@@ -197,28 +197,53 @@ button {
   font-size: inherit;
   line-height: 21.78px;
   font-variation-settings: 'wght' var(--card-header-font-weight);
-  padding-block-start: 5px;
-  padding-block-end: 5px;
-  padding-inline-start: 10px;
-  padding-inline-end: 20%;
+  padding: 5px 24px 5px 10px;
   block-size: clamp(54px, 100%, 33px);
-  border-bottom: 1px solid var(--main-color, #00CC14);
+  border-block-end: 1px solid var(--main-color, #00CC14);
 }
 
 .image-container {
   position: relative;
+  border-block-end: 1px solid var(--main-color, #00CC14);
 }
 
 .content-img {
+  display: block;
   inline-size: 100%;
-  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
 
+.beginning-img {
+  filter: blur(2px) saturate(150%);
+}
+
+.first-sprint {
+  filter: grayscale(40%) saturate(150%);
+}
+
+.first-sprint__end {
+  filter: contrast(120%);
+}
+
+.second-sprint {
+  filter: brightness(1.1);
+}
+
+.second-sprint__end {
+  filter: hue-rotate(-40deg);
+}
+
+.third-sprint {
+  filter: grayscale(100%);
+}
+
+.third-sprint__end {
+  filter: sepia(70%);
+}
+
 .label {
   position: absolute;
-  text-transform: uppercase;
   color: var(--main-color, #00CC14);
   font-family: var(--accent-font);
   font-size: 14px;
@@ -264,7 +289,7 @@ button {
   block-size: 38px;
 }
 
-.card__icon-button:focus{
+.card__icon-button:focus {
   outline: none;
 }
 
@@ -302,7 +327,7 @@ button {
   transition: fill 0.3s 0.05s linear;
 }
 
-.like-icon.is-liked .contour {  
+.like-icon.is-liked .contour {
   fill: var(--heart-sparks-color, #f00);
   transition: fill 0.3s 0.06s linear;
 }
@@ -334,7 +359,7 @@ button {
 }
 
 .card__like-button {
-  background-color: transparent;  
+  background-color: transparent;
   inline-size: 130px;
   block-size: 38px;
 }
@@ -410,22 +435,27 @@ dialog[open] {
   .content-decor {
     inline-size: 100%;
   }
+
   .header-main__text {
     padding-block-start: 120px;
-  }  
-  .card-text__main {
-    padding-inline-end: 15%;
   }
+
+  .card-text__main {
+    padding-inline-end: 9%;
+  }
+
   .footer {
     max-inline-size: 306px;
   }
+
   .save-button {
     flex-direction: column;
     min-block-size: 84px;
   }
+
   .floppy-image {
     width: 28px;
-    height: 28px;
-    
+    height: 28px;    
   }
+
 }
