@@ -32,6 +32,9 @@
 /*  ---Секция общих элементов--- */
 
 .content-decor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   inline-size: min(100%, 700px);
 }
 
@@ -48,17 +51,22 @@ button {
   background-color: var(--background-color, #000);
   border: 2px solid var(--main-color, #00CC14);
   outline: none;
-  overflow: hidden;
+  overflow: hidden;  
+  transition: box-shadow 0.3s;
+  transition-timing-function: ease;
 }
 
 .button__text {
   position: relative;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif);
   font-size: 14px;
   line-height: 12.6px;
   color: var(--button-text-color, #00CC14);
   mix-blend-mode: difference;
-  transition: mix-blend-mode 2s;                  /* Not working? */
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .button::before {
@@ -72,10 +80,7 @@ button {
 
 .button:focus-visible {
   outline: none;
-  border: 2px solid var(--main-color, #00CC14);
   box-shadow: 2px 2px 0 var(--main-color, #00CC14);
-  transition: box-shadow 0.3s;
-  transition-timing-function: ease;
 }
 
 .button:hover::before {
@@ -90,14 +95,14 @@ button {
   grid-template-rows: repeat(3, min-content);
   justify-items: center;
   background-color: var(--background-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif);
   text-transform: uppercase;
   border: 1px solid var(--main-color, #00CC14);
+  padding-block-start: 136px; /* Переработать? */
 }
 
-.header-main__text {
+.logo-link {
   grid-column: 2 / 3;
-  padding-block-start: 136px; /* Переработать? */
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: 1;
 }
@@ -105,20 +110,20 @@ button {
 .header-text {
   grid-column: 2 / 3;
   padding-block-start: 20px;
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-size: clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem);
   line-height: 1;
 }
 
 .theme-menu {
   grid-column: 2 / 3;
-  padding-block-start: 23px;
+  padding-block-start: 22px;
   padding-block-end: 23px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
   padding-inline-start: 19px;
 }
 
@@ -129,6 +134,8 @@ button {
   font-size: 14px;
   line-height: 14px;
   border: none;
+  transition: color 0.3s;
+  transition-timing-function: ease;
 }
 
 .theme-menu__button::before {
@@ -150,14 +157,12 @@ button {
   width: calc(100% - 2px);
   transform: scaleX(0);
   transform-origin: left;
-  background-color: var(--main-color, #00CC14);
+  background-color: rgb(var(--main-color-opacity, 0 204 20) / .6);
   transition: transform 0.3s;
 }
 
 .theme-menu__button:hover {
   color: rgb(var(--main-color-opacity, 0 204 20) / .6);
-  transition: color 0.3s;
-  transition-timing-function: ease;
   cursor: pointer;
 }
 
@@ -173,8 +178,6 @@ button {
 .theme-menu__button:disabled {
   --display-change: '';
   color: rgb(var(--main-color-opacity) / .6);
-  transition: color 0.3s;
-  transition-timing-function: ease;
   pointer-events: none;
 }
 
@@ -185,7 +188,7 @@ button {
   font-size: 18px;
   line-height: 21px;
   background-color: var(--background-color, #000);
-  margin-block-start: 50px;
+  margin-block-end: 50px;
   border: 1px solid var(--main-color, #00CC14);
 }
 
@@ -198,7 +201,6 @@ button {
   line-height: 21.78px;
   font-variation-settings: 'wght' var(--card-header-font-weight);
   padding: 5px 24px 5px 10px;
-  block-size: clamp(54px, 100%, 33px);
   border-block-end: 1px solid var(--main-color, #00CC14);
 }
 
@@ -214,38 +216,38 @@ button {
   object-position: center;
 }
 
-.beginning-img {
+.img-blur__saturate {
   filter: blur(2px) saturate(150%);
 }
 
-.first-sprint {
+.img-grayscale__saturate {
   filter: grayscale(40%) saturate(150%);
 }
 
-.first-sprint__end {
+.img-contrast {
   filter: contrast(120%);
 }
 
-.second-sprint {
+.img-brightness {
   filter: brightness(1.1);
 }
 
-.second-sprint__end {
+.img-hue-rotate {
   filter: hue-rotate(-40deg);
 }
 
-.third-sprint {
+.img-grayscale {
   filter: grayscale(100%);
 }
 
-.third-sprint__end {
+.img-sepia {
   filter: sepia(70%);
 }
 
 .label {
   position: absolute;
   color: var(--main-color, #00CC14);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif);
   font-size: 14px;
   line-height: 14px;
   opacity: 0.5;
@@ -263,12 +265,11 @@ button {
   }
 }
 
-.card-text__main {
-  padding: 23px 25px 27px;
-}
-
-.card-text__additional {
-  padding: 0 25px;
+.card-text__area {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
 }
 
 .card-control {
@@ -284,9 +285,11 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
   inline-size: 39px;
   block-size: 38px;
+  transition: border-color 0.3s;
+  transition-timing-function: ease;
 }
 
 .card__icon-button:focus {
@@ -294,7 +297,8 @@ button {
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--main-color, #00CC14);
+  outline: none;
+  border-color: var(--main-color, #00CC14);
 }
 
 .card__icon-button:hover .core {
@@ -364,18 +368,11 @@ button {
   block-size: 38px;
 }
 
-/*  ---Секция футера--- */
-
-.footer {
-  padding-block-start: 52px;
-  padding-block-end: 103px;
-  max-inline-size: 335px;
-}
-
 .save-button {
   gap: 8px;
-  inline-size: 100%;
+  min-inline-size: 335px;
   min-block-size: 55px;
+  margin-block-end: 103px;
 }
 
 .floppy-image {
@@ -386,7 +383,7 @@ button {
 /*  ---Секция диалогового окна--- */
 
 dialog {
-  max-inline-size: min(100%, 353px);
+  max-inline-size: min(100%, 357px);
   background-color: var(--background-color);
   border: 1px solid var(--main-color, #00CC14);
   padding: 30px;
@@ -398,8 +395,9 @@ dialog::backdrop {
 
 dialog[open] {
   display: grid;
-  grid-template: repeat(2, max-content) / 60px 1fr;
+  grid-template: repeat(2, max-content) / max-content 1fr;
   row-gap: 30px;
+  column-gap: 20px;
 }
 
 .save-floppy__image {
@@ -436,16 +434,13 @@ dialog[open] {
     inline-size: 100%;
   }
 
-  .header-main__text {
+  .header {
     padding-block-start: 120px;
   }
 
-  .card-text__main {
-    padding-inline-end: 9%;
-  }
-
-  .footer {
-    max-inline-size: 306px;
+  .label {
+    top: 25px;
+    right: 13px;
   }
 
   .save-button {
