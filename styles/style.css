@@ -51,7 +51,7 @@ button {
   background-color: var(--background-color, #000);
   border: 2px solid var(--main-color, #00CC14);
   outline: none;
-  overflow: hidden;  
+  overflow: hidden;
   transition: box-shadow 0.3s;
   transition-timing-function: ease;
 }
