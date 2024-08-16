@@ -5,4 +5,4 @@ https://www.figma.com/design/JQhPLs2COLIeZtAtlsBS34/%238-%3C%2F%D0%B7%D0%B0%D0%B
 
 Браузер Mozilla Firefox, Pixel Perfect плагин.
 
-Ссылкb на сравнение макета и шаблона: https://imgur.com/a/BDKP06f
+Ссылка на сравнение макета и шаблона: https://imgur.com/a/BDKP06f
