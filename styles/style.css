@@ -116,14 +116,14 @@ button {
 
 .theme-menu {
   grid-column: 2 / 3;
-  padding-block-start: 22px;
-  padding-block-end: 23px;
+  padding-block-start: 24px;
+  padding-block-end: 24px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 11px;
   padding-inline-start: 19px;
 }
 
@@ -269,7 +269,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 27px;
-  padding: 25px;
+  padding: 25px 25px 0;
 }
 
 .card-control {
@@ -290,6 +290,7 @@ button {
   block-size: 38px;
   transition: border-color 0.3s;
   transition-timing-function: ease;
+  cursor: pointer;
 }
 
 .card__icon-button:focus {
@@ -372,7 +373,7 @@ button {
   gap: 8px;
   min-inline-size: 335px;
   min-block-size: 55px;
-  margin-block-end: 103px;
+  margin-block-end: 100px;
 }
 
 .floppy-image {
@@ -383,7 +384,7 @@ button {
 /*  ---Секция диалогового окна--- */
 
 dialog {
-  max-inline-size: min(100%, 357px);
+  max-inline-size: min(100%, 353px);
   background-color: var(--background-color);
   border: 1px solid var(--main-color, #00CC14);
   padding: 30px;
@@ -445,11 +446,22 @@ dialog[open] {
 
   .save-button {
     flex-direction: column;
+    min-inline-size: 306px;
     min-block-size: 84px;
   }
 
   .floppy-image {
     width: 28px;
     height: 28px;
+  }
+
+  .save-floppy__image {
+    width: 39px;
+    height: 39px;
+  }
+
+  dialog {
+    max-inline-size: min(100%, 341px);
+    padding: 30px 42px;
   }
 }
